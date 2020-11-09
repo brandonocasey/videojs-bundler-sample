@@ -6,14 +6,10 @@ const resolve = require('@rollup/plugin-node-resolve').default;
 module.exports = {
   input: 'src-es6/index.js',
   plugins: [
-    resolve({
-      jsnext: true,
-      main: true,
-      browser: true
-    }),
     cjs({
       sourceMap: false
     }),
+    resolve(),
     babel({
       babelrc: false,
       babelHelpers: 'runtime',
